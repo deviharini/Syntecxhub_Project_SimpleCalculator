@@ -1,0 +1,72 @@
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        return "Error: Cannot divide by zero."
+    return a / b
+
+
+def get_number(message):
+    while True:
+        try:
+            return float(input(message))
+        except ValueError:
+            print("Invalid input! Please enter a number.")
+
+
+def calculator():
+    while True:
+        print("\n========== SIMPLE CALCULATOR ==========")
+        print("1. Addition (+)")
+        print("2. Subtraction (-)")
+        print("3. Multiplication (*)")
+        print("4. Division (/)")
+        print("5. Clear")
+        print("6. Exit")
+        print("=======================================")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == "1":
+            num1 = get_number("Enter first number: ")
+            num2 = get_number("Enter second number: ")
+            print("Result:", add(num1, num2))
+
+        elif choice == "2":
+            num1 = get_number("Enter first number: ")
+            num2 = get_number("Enter second number: ")
+            print("Result:", subtract(num1, num2))
+
+        elif choice == "3":
+            num1 = get_number("Enter first number: ")
+            num2 = get_number("Enter second number: ")
+            print("Result:", multiply(num1, num2))
+
+        elif choice == "4":
+            num1 = get_number("Enter first number: ")
+            num2 = get_number("Enter second number: ")
+            print("Result:", divide(num1, num2))
+
+        elif choice == "5":
+            print("\nCalculator cleared.")
+            print("Ready for a new calculation.")
+
+        elif choice == "6":
+            print("\nThank you for using Simple Calculator!")
+            break
+
+        else:
+            print("Invalid choice! Please select a number from 1 to 6.")
+
+
+calculator()
